@@ -3,7 +3,7 @@ import 'homepage_screen.dart'; // Import your HomePage file
 import '../util/navbar.dart'; // Import the NavBar widget
 
 class AddSmartDeviceScreen extends StatelessWidget {
-  const AddSmartDeviceScreen({Key? key}) : super(key: key);
+  const AddSmartDeviceScreen({super.key});
 
   @override
 Widget build(BuildContext context) {
@@ -23,13 +23,13 @@ Widget build(BuildContext context) {
     child: Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false, // Removes the back button
-        title: Text('Add Devices'), // Set the title to "Add Devices"
+        title: const Text('Add Devices'), // Set the title to "Add Devices"
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Here you can add new smart devices.'),
+            const Text('Here you can add new smart devices.'),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushAndRemoveUntil(
@@ -38,7 +38,7 @@ Widget build(BuildContext context) {
                   (route) => false,
                 );
               },
-              child: Text('Go to Home'),
+              child: const Text('Go to Home'),
             ),
           ],
         ),

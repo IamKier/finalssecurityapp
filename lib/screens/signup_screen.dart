@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './signin_screen.dart';
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+  const RegisterPage({super.key});
 
   @override
   _RegisterPageState createState() => _RegisterPageState();
@@ -18,7 +18,7 @@ class _RegisterPageState extends State<RegisterPage> {
         child:  Column(
         mainAxisAlignment: MainAxisAlignment.center, // Center the column vertically
         children: [
-          Text(
+          const Text(
             'Create an Account',
             style: TextStyle(
               fontSize: 42,
@@ -26,7 +26,7 @@ class _RegisterPageState extends State<RegisterPage> {
               color: Colors.white,
             ),
           ),
-          SizedBox(height: 20), // Add space after the Create an Account text
+          const SizedBox(height: 20), // Add space after the Create an Account text
           Padding(
             padding: const EdgeInsets.all(30.0), // Add padding
             child: Container(
@@ -87,7 +87,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   Row(
                     children: <Widget>[
-                      SizedBox(width: 7), // Add space to move the checkbox and text to the left
+                      const SizedBox(width: 7), // Add space to move the checkbox and text to the left
                       Checkbox(
                         value: _isChecked,
                         onChanged: (newValue) {
@@ -95,16 +95,16 @@ class _RegisterPageState extends State<RegisterPage> {
                             _isChecked = newValue ?? false;
                           });
                         },
-                        fillColor: MaterialStateColor.resolveWith(
+                        fillColor: WidgetStateColor.resolveWith(
                                 (states) => _isChecked ? Colors.green : Colors.transparent),
                       ),
-                      Text(
+                      const Text(
                         'Agree to terms and conditions',
                         style: TextStyle(color: Colors.black87),
                       ),
                     ],
                   ),
-                  SizedBox(height: 20), // Add space under the "Agree to terms and conditions" text
+                  const SizedBox(height: 20), // Add space under the "Agree to terms and conditions" text
                   SizedBox(
                     width: 250,
                     height: 40, // Reduce the height of the container
@@ -113,7 +113,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         // Perform registration action here
                       },
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 0, 0, 0)),
+                        backgroundColor: WidgetStateProperty.all<Color>(const Color.fromARGB(255, 0, 0, 0)),
                       ),
                       child: const Text('Sign Up'),
                     ),
@@ -122,7 +122,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
             ),
           ),
-          SizedBox(height: 20), // Add space between the container and the "Back to Login" button
+          const SizedBox(height: 20), // Add space between the container and the "Back to Login" button
           ElevatedButton(
             onPressed: () {
               Navigator.push(
@@ -130,7 +130,7 @@ class _RegisterPageState extends State<RegisterPage> {
               MaterialPageRoute(builder: (context) => const LoginPage()),
               );
             },
-            child: Text('Back to Login'),
+            child: const Text('Back to Login'),
           ),
         ],
       ),

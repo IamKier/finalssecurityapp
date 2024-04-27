@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import './signup_screen.dart';
 import './homepage_screen.dart';
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -20,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Login',
                 style: TextStyle(
                   fontSize: 42,
@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
                   color: Colors.white,
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.all(30.0),
                 child: Container(
@@ -62,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       Row(
                         children: <Widget>[
-                          SizedBox(width: 7),
+                          const SizedBox(width: 7),
                           Checkbox(
                             value: _isChecked,
                             onChanged: (newValue) {
@@ -70,16 +70,16 @@ class _LoginPageState extends State<LoginPage> {
                                 _isChecked = newValue ?? false;
                               });
                             },
-                            fillColor: MaterialStateColor.resolveWith(
+                            fillColor: WidgetStateColor.resolveWith(
                                     (states) => _isChecked ? Colors.green : Colors.transparent),
                           ),
-                          Text(
+                          const Text(
                             'Keep me signed in',
                             style: TextStyle(color: Colors.black87),
                           ),
                         ],
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       SizedBox(
                         width: 250,
                         height: 40,
@@ -91,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                             );
                           },
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 0, 0, 0)),
+                            backgroundColor: WidgetStateProperty.all<Color>(const Color.fromARGB(255, 0, 0, 0)),
                           ),
                           child: const Text('Login'),
                         ),
@@ -100,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -108,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                     MaterialPageRoute(builder: (context) => const RegisterPage()),
                   );
                 },
-                child: Text('Create an account'),
+                child: const Text('Create an account'),
               ),
             ],
           ),

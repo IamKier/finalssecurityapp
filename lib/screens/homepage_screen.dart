@@ -4,7 +4,7 @@ import 'addsmartdevice.dart';
 import '../util/navbar.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -54,12 +54,12 @@ Widget build(BuildContext context) {
             const SizedBox(height: 20),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "Username",
-                    style: TextStyle(fontSize: 20, color: const Color.fromARGB(255, 36, 35, 35)),
+                    style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 36, 35, 35)),
                   ),
                 ],
               ),
@@ -86,8 +86,8 @@ Widget build(BuildContext context) {
                         MaterialPageRoute(builder: (context) => const AddSmartDeviceScreen()),
                       );
                     },
+                    backgroundColor: const Color.fromARGB(255, 125, 129, 133),
                     child: Icon(Icons.add),
-                    backgroundColor: Color.fromARGB(255, 125, 129, 133),
                   ),
                 ],
               ),

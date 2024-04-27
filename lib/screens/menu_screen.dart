@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'homepage_screen.dart';
 import '../util/navbar.dart';
 
 class MenuScreen extends StatelessWidget {
-  const MenuScreen({Key? key});
+  const MenuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

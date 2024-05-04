@@ -87,7 +87,7 @@ Widget build(BuildContext context) {
                       );
                     },
                     backgroundColor: const Color.fromARGB(255, 125, 129, 133),
-                    child: Icon(Icons.add),
+                    child: const Icon(Icons.add),
                   ),
                 ],
               ),

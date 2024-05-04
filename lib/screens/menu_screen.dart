@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../util/navbar.dart';
 
 class MenuScreen extends StatelessWidget {
-  const MenuScreen({super.key});
+  const MenuScreen({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -53,23 +53,16 @@ class MenuScreen extends StatelessWidget {
         }
       },
       child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 125, 129, 133), // Set background color
+        backgroundColor: Colors.grey[200], // Set background color to light grey
         appBar: AppBar(
           backgroundColor: Colors.white, // Set appbar background color to white
           automaticallyImplyLeading: false, // Remove back button
           title: const Text('SecurityApp'), // App title
-          actions: [
-            // Settings Icon
-            IconButton(
-              icon: const Icon(Icons.settings),
-              onPressed: () {
-                // Add your settings functionality here
-              },
-            ),
-          ],
+          // Remove settings icon from the app bar
+          actions: const [],
         ),
         body: SafeArea(
-          child: SingleChildScrollView( // Wrap Column with SingleChildScrollView
+          child: SingleChildScrollView(
             child: Column(
               children: [
                 // User Profile Section
@@ -80,38 +73,36 @@ class MenuScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       // Profile Icon
-                      CircleAvatar(
-                        // Add your user profile image here
-                        radius: 30, // Increase the radius to make it larger
-                        // backgroundImage: AssetImage('path_to_your_image'),
-                        backgroundColor: const Color.fromARGB(255, 0, 0, 0), // Add your preferred background color
-                        foregroundColor: Colors.black, // Set icon color to black
+                      const CircleAvatar(
+                        radius: 30,
+                        backgroundColor: Color.fromARGB(255, 0, 0, 0),
+                        foregroundColor: Colors.black,
                       ),
                       const SizedBox(width: 20),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             'Username',
                             style: TextStyle(
-                              fontSize: 20, // Increase the font size
+                              fontSize: 20,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black, // Set text color to black
+                              color: Colors.black,
                             ),
                           ),
-                          SizedBox(height: 5),
+                          const SizedBox(height: 5),
                           DecoratedBox(
                             decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 201, 199, 199), // Grey background color
-                              borderRadius: BorderRadius.circular(20), // Rounded corners
+                              color: const Color.fromARGB(255, 201, 199, 199),
+                              borderRadius: BorderRadius.circular(20),
                             ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                               child: Text(
                                 'Edit Profile',
                                 style: TextStyle(
-                                  fontSize: 16, // Font size
-                                  color: const Color.fromARGB(255, 70, 201, 146), // Green text color
+                                  fontSize: 16,
+                                  color: Color.fromARGB(255, 70, 201, 146),
                                 ),
                               ),
                             ),
@@ -123,8 +114,8 @@ class MenuScreen extends StatelessWidget {
                 ),
                 // Top Part
                 Container(
-                  height: 200, // Example height
-                  color: Colors.grey, // Example color
+                  height: 200,
+                  color: Colors.grey,
                   child: Center(
                     child: ElevatedButton(
                       onPressed: () {
@@ -137,8 +128,8 @@ class MenuScreen extends StatelessWidget {
                 ),
                 // Mid Part
                 Container(
-                  height: 300, // Example height
-                  color: Colors.grey, // Example color
+                  height: 300,
+                  color: Colors.grey,
                   child: Center(
                     child: ElevatedButton(
                       onPressed: () {
@@ -150,8 +141,8 @@ class MenuScreen extends StatelessWidget {
                 ),
                 // Bottom Part
                 Container(
-                  height: 200, // Example height
-                  color: Colors.grey, // Example color
+                  height: 200,
+                  color: Colors.grey,
                   child: Center(
                     child: ElevatedButton(
                       onPressed: () {

@@ -18,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
       backgroundColor: const Color.fromARGB(255, 217, 221, 221), // Set background color
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(top: 120.0), // Add top padding here
+          padding: const EdgeInsets.only(top: 100.0), // Add top padding here
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

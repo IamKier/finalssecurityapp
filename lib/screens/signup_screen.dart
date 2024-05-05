@@ -131,7 +131,7 @@ class _RegisterPageState extends State<RegisterPage> {
 class RoundedFormContainer extends StatelessWidget {
   final List<Widget> children;
 
-  const RoundedFormContainer({Key? key, required this.children}) : super(key: key);
+  const RoundedFormContainer({super.key, required this.children});
 
   @override
   Widget build(BuildContext context) {

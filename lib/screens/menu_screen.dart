@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import '../util/navbar.dart';
+import 'package:finalssecurityapp/util/smart_device_box.dart';
+import 'package:finalssecurityapp/util/navbar.dart';
+import 'package:finalssecurityapp/screens/addsmartdevice.dart';
 
 class MenuScreen extends StatelessWidget {
-  const MenuScreen({super.key,});
+  final List<SmartDevice> smartDevices; // Update to non-nullable list of SmartDevice
+
+  const MenuScreen({Key? key, required this.smartDevices}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -112,46 +116,20 @@ class MenuScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                // Top Part
-                Container(
-                  height: 200,
-                  color: Colors.grey,
-                  child: Center(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // Navigate to Home page
-                        Navigator.popUntil(context, ModalRoute.withName('/'));
-                      },
-                      child: const Text('Go to Home'),
-                    ),
+                // List of Smart Devices
+                if (smartDevices.isNotEmpty) // Check if the list is not empty
+                  Column(
+                    children: smartDevices.map((device) {
+                      return SmartDeviceBox(
+                        smartDeviceName: device.name,
+                        iconPath: device.type == 'Camera' ? 'assets/icons/camera.png' : 'assets/icons/lock.png',
+                        powerOn: false, // Assuming the power status is always off initially
+                        onChanged: (value) {
+                          // Handle power switch changes
+                        },
+                      );
+                    }).toList(),
                   ),
-                ),
-                // Mid Part
-                Container(
-                  height: 300,
-                  color: Colors.grey,
-                  child: Center(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // You can implement other menu options here
-                      },
-                      child: const Text('Other Option'),
-                    ),
-                  ),
-                ),
-                // Bottom Part
-                Container(
-                  height: 200,
-                  color: Colors.grey,
-                  child: Center(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // You can implement other menu options here
-                      },
-                      child: const Text('Bottom Option'),
-                    ),
-                  ),
-                ),
               ],
             ),
           ),

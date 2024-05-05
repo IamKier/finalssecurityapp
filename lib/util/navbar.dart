@@ -57,7 +57,7 @@ class NavBar extends StatelessWidget {
                         // Navigate to the MenuScreen when the "Menu" tab is tapped
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const MenuScreen()),
+                          MaterialPageRoute(builder: (context) => const MenuScreen(smartDevices: [],)),
                         );
                       } else {
                         // Handle navigation to other screens

@@ -139,7 +139,19 @@ class MenuScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                
+                // Bottom Part
+                Container(
+                  height: 200,
+                  color: Colors.grey,
+                  child: Center(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // You can implement other menu options here
+                      },
+                      child: const Text('Bottom Option'),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

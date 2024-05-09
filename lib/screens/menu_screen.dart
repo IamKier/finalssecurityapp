@@ -4,9 +4,9 @@ import 'package:finalssecurityapp/util/navbar.dart';
 import 'package:finalssecurityapp/screens/addsmartdevice.dart';
 
 class MenuScreen extends StatelessWidget {
-  final List<SmartDevice> smartDevices; // Update to non-nullable list of SmartDevice
+  final List<SmartDevice>? smartDevices; // Update to nullable list of SmartDevice
 
-  const MenuScreen({Key? key, required this.smartDevices}) : super(key: key);
+  const MenuScreen({Key? key, required this.smartDevices});
 
   @override
   Widget build(BuildContext context) {
@@ -117,9 +117,9 @@ class MenuScreen extends StatelessWidget {
                   ),
                 ),
                 // List of Smart Devices
-                if (smartDevices.isNotEmpty) // Check if the list is not empty
+                if (smartDevices != null && smartDevices!.isNotEmpty) // Check if the list is not null and not empty
                   Column(
-                    children: smartDevices.map((device) {
+                    children: smartDevices!.map((device) {
                       return SmartDeviceBox(
                         smartDeviceName: device.name,
                         iconPath: device.type == 'Camera' ? 'assets/icons/camera.png' : 'assets/icons/lock.png',

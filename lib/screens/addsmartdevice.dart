@@ -14,7 +14,7 @@ class SmartDevice {
 }
 
 class AddSmartDeviceScreen extends StatefulWidget {
-  const AddSmartDeviceScreen({Key? key}) : super(key: key);
+  const AddSmartDeviceScreen({super.key});
 
   @override
   _AddSmartDeviceScreenState createState() => _AddSmartDeviceScreenState();
@@ -94,7 +94,7 @@ class _AddSmartDeviceScreenState extends State<AddSmartDeviceScreen> {
                         width: double.infinity,
                         child: TextFormField(
                           controller: _deviceNameController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             labelText: 'Device Name',
                             border: OutlineInputBorder(),
                           ),
@@ -134,9 +134,9 @@ class _AddSmartDeviceScreenState extends State<AddSmartDeviceScreen> {
                       color: Colors.black54,
                       alignment: Alignment.center,
                       child: Container(
-                        padding: EdgeInsets.all(20),
+                        padding: const EdgeInsets.all(20),
                         color: Colors.white,
-                        child: Text(
+                        child: const Text(
                           'Please enter a device name.',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,

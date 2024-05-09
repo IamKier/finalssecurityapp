@@ -5,7 +5,7 @@ import 'package:finalssecurityapp/util/smart_device_box.dart';
 import 'package:finalssecurityapp/util/navbar.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
